@@ -2,13 +2,18 @@ import React from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 
-const Layout = (props, { title }) => {
-  document.title = title;
+const Layout = (props) => {
+  document.title = props.title;
   return (
     <>
-      <Header />
-      <div>{props.children}</div>
-      <Footer />
+      {props.type === "homepage" ? (
+        <>
+          <Header />
+          <div>{props.children}</div>
+        </>
+      ) : (
+        <div>{props.children}</div>
+      )}
     </>
   );
 };
