@@ -1,6 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import Header from "../Header";
-import Footer from "../Footer";
 
 const Layout = (props) => {
   document.title = props.title;
@@ -11,8 +11,15 @@ const Layout = (props) => {
           <Header />
           <div>{props.children}</div>
         </>
+      ) : props.type === "afterLogin" ? (
+        <>
+          <Header name={props.name} typeHeader="afterLogin" />
+          <div>{props.children}</div>
+        </>
       ) : (
-        <div>{props.children}</div>
+        <>
+          <div>{props.children}</div>
+        </>
       )}
     </>
   );
