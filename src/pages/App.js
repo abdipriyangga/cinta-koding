@@ -1,6 +1,7 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Layout from "../components/Layout";
 
-function App(props) {
+function App() {
   return <Layout type="homepage" title="Homepage | Cinta Koding"></Layout>;
 }
 

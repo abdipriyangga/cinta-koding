@@ -67,10 +67,7 @@ const Login = () => {
     const formData = new FormData();
     formData.append("username", username);
     formData.append("password", password);
-
-    const nameData = user.map((data) => {
-      return data.name;
-    });
+    localStorage.setItem("username", username);
     navigate("/user");
   };
   console.log("User: ", user);
